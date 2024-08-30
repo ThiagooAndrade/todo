@@ -10,6 +10,7 @@ export default {
         "darkHeader": "#0D0D0D",
         "darkContent": "#1A1A1A",
         "darkInput": "#262626",
+        "darkInputPlaceholder": "#808080"
       },
       fontFamily: {
         "sans": ["Poppins", "sans-serif"],
@@ -19,8 +20,7 @@ export default {
         screens: {
           sm: '640px',
           md: '768px',
-          lg: '1024px',
-          xl: '1280px',
+          lg: '1024px'
         }
       }
     },
