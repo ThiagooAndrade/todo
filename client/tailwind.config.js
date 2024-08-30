@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        "darkHeader": "#0D0D0D",
+        "darkContent": "#1A1A1A",
+        "darkInput": "#262626",
+      },
       fontFamily: {
         "sans": ["Poppins", "sans-serif"],
       },
