@@ -21,6 +21,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        lightHeader: '#F8F8F8',
+        lightContent: '#FFFFFF',
+        lightInput: '#F8F8F8',
+        lightInputPlaceholder: '#C4C4C4',
         darkHeader: '#0D0D0D',
         darkContent: '#1A1A1A',
         darkInput: '#262626',
