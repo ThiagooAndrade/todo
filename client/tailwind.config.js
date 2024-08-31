@@ -16,17 +16,17 @@ module.exports = {
         sm: '640px',
         md: '768px',
         lg: '1024px',
-        '2xl': '1400px'
       }
     },
     extend: {
       colors: {
-        lightHeader: '#F8F8F8',
-        lightContent: '#FFFFFF',
+        lightHeader: '#5429CC',
+        lightContent: '#F0F5F5',
         lightInput: '#F8F8F8',
         lightInputPlaceholder: '#C4C4C4',
         darkHeader: '#0D0D0D',
         darkContent: '#1A1A1A',
+        darkDialogContent: "#121111",
         darkInput: '#262626',
         darkInputPlaceholder: '#808080',
         border: 'hsl(var(--border))',
