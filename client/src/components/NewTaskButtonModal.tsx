@@ -9,11 +9,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Calendar } from "./ui/calendar";
 import { CirclePlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useDates } from "@/hooks/useDates";
+import { useTasks } from "@/hooks/useTasks";
 
 
 export function NewTaskButtonModal() {
-    const { date, getDate } = useDates();
+    const { date, changeDate } = useTasks();
 
 
     return (
@@ -62,7 +62,7 @@ export function NewTaskButtonModal() {
                                 <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
                                     <Select
                                         onValueChange={(value) =>
-                                            getDate(addDays(new Date(), parseInt(value)))
+                                            changeDate(addDays(new Date(), parseInt(value)))
                                         }
                                     >
                                         <SelectTrigger>
