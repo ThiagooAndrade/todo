@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useEffect, useState } from "react
 
 interface tasksContextData {
     date: Date | undefined;
-    getDate: (date: Date | undefined) => void;
+    changeDate: (date: Date | undefined) => void;
 }
 
 const tasksContext = createContext<tasksContextData>({} as tasksContextData);
@@ -16,12 +16,12 @@ export function TasksContextProvider({ children }: { children: ReactNode }) {
         console.log(date);
     }, [date]);
 
-    function getDate(date: Date | undefined) {
+    function changeDate(date: Date | undefined) {
         setDate(date);
     }
 
     return (
-        <tasksContext.Provider value={{ date, getDate }}>
+        <tasksContext.Provider value={{ date, changeDate }}>
             {children}
         </tasksContext.Provider>
     )
