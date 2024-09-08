@@ -3,11 +3,11 @@ import HeaderRoot from "../components/HeaderRoot";
 import { Badge } from "@/components/ui/badge";
 import { Tasks } from "@/components/Tasks";
 import { NewTaskButtonModal } from "@/components/NewTaskButtonModal";
-import { useDates } from "@/hooks/useDates";
+import { useTasks } from "@/hooks/useTasks";
 
 
 export default function Root() {
-    const { date } = useDates();
+    const { date } = useTasks();
 
     return (
         <div className="overflow-hidden h-screen">
@@ -32,6 +32,7 @@ export default function Root() {
                         <Tasks date={date} />
                         <Tasks date={date} />
                         <Tasks date={date} />
+                        { }
                     </div>
                 </section>
             </div>
