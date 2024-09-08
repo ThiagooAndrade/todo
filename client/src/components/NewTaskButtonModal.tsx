@@ -77,7 +77,7 @@ export function NewTaskButtonModal() {
                                     </Select>
                                     <div className="rounded-md border">
                                         <Calendar mode="single" selected={date} onSelect={(e) => {
-                                            getDate(e);
+                                            changeDate(e);
                                         }} />
                                     </div>
                                 </PopoverContent>
