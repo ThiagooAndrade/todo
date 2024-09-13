@@ -10,10 +10,22 @@ import { Calendar } from "./ui/calendar";
 import { CirclePlusIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTasks } from "@/hooks/useTasks";
+import { FormEvent, useState } from "react";
 
 
 export function NewTaskButtonModal() {
     const { date, changeDate } = useTasks();
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+
+    function teste(e: FormEvent) {
+        e.preventDefault();
+        console.log(name, description, date);
+
+
+        setName("");
+        setDescription("");
+    }
 
 
     return (
@@ -24,23 +36,23 @@ export function NewTaskButtonModal() {
             </DialogTrigger>
             <DialogPortal>
                 <DialogOverlay className="bg-black/0" />
-                <form>
-                    <DialogContent className="dark:bg-darkDialogContent">
-                        <DialogTitle className="DialogTitle">Create new task</DialogTitle>
-                        <DialogDescription className="DialogDescription">
-                            Click create when you're done.
-                        </DialogDescription>
+                <DialogContent className="dark:bg-darkDialogContent">
+                    <DialogTitle className="DialogTitle">Create new task</DialogTitle>
+                    <DialogDescription className="DialogDescription">
+                        Click create when you're done.
+                    </DialogDescription>
+                    <form onSubmit={teste} className="flex flex-col gap-2">
                         <fieldset>
                             <Label htmlFor="name">
                                 Name
                             </Label>
-                            <Input className="focus-visible:ring-blue-400" id="name" placeholder="Name of task" />
+                            <Input value={name} onChange={(event) => setName(event.target.value)} type="text" name="name" className="focus-visible:ring-blue-400" placeholder="Name of task" />
                         </fieldset>
                         <fieldset>
                             <Label className="Label" htmlFor="description">
                                 Description
                             </Label>
-                            <Input className="focus-visible:ring-blue-400" id="username" placeholder="Description of task" />
+                            <Input value={description} onChange={(event) => setDescription(event.target.value)} type="text" name="description" className="focus-visible:ring-blue-400" placeholder="Description of task" />
                         </fieldset>
                         <fieldset className="flex flex-col gap-1">
                             <Label className="Label" htmlFor="Date">
@@ -85,12 +97,12 @@ export function NewTaskButtonModal() {
                         </fieldset>
                         <div style={{ display: 'flex', marginTop: 25, justifyContent: 'flex-end' }}>
                             <DialogClose asChild>
-                                <Button className="bg-blue-500 hover:bg-blue-600 dark:bg-slate-200 dark:hover:bg-slate-300">Create</Button>
+                                <Button type="submit" onSubmit={teste} className="bg-blue-500 hover:bg-blue-600 dark:bg-slate-200 dark:hover:bg-slate-300">Create</Button>
                             </DialogClose>
                         </div>
-                    </DialogContent>
-                </form>
+                    </form>
+                </DialogContent>
             </DialogPortal>
-        </Dialog>
+        </Dialog >
     )
 }
