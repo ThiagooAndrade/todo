@@ -9,6 +9,7 @@ export default function HeaderRoot() {
     return (
         <header className="w-screen h-48 font-sans relative z-0 bg-lightHeader dark:bg-darkHeader duration-500">
             <div className="container h-full text-white dark:text-black flex justify-center items-center space-x-2">
+                <h2></h2>
                 <img src={rocketIcon} alt="Todo Icon" />
                 <h1 className="text-blue-100 dark:text-blue-400 text-2xl lg:text-4xl font-bold">to<span className="text-purple-500">do</span></h1>
             </div>
